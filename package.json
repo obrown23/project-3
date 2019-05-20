@@ -2,13 +2,16 @@
   "name": "project-reel-exposure-p3",
   "version": "1.0.0",
   "description": "",
-  "main": "app.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
+  "main": "server.js",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/obrown23/project-3.git"
+  },
+  "scripts": {
+    "start": "nodemon server.js",
+    "dev": "concurrently \"nodemon server.js\" \"cd client && npm start\"",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "postinstall": "cd client && npm i && npm run build"
   },
   "keywords": [],
   "author": "",
@@ -16,12 +19,17 @@
   "bugs": {
     "url": "https://github.com/obrown23/project-3/issues"
   },
-  "homepage": "https://github.com/obrown23/project-3#readme",
+  
   "dependencies": {
+    "bootstrap": "^4.3.1",
     "concurrently": "^4.1.0",
     "dotenv": "^8.0.0",
     "express": "^4.16.4",
     "mongoose": "^5.5.8",
-    "morgan": "^1.9.1"
+    "morgan": "^1.9.1",
+    "nodemon": "^1.19.0"
+  },
+  "engines": {
+    "node": "10.13.0"
   }
 }
